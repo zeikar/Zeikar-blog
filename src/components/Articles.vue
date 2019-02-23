@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
-    <Article title="제목" preview="내용"/>
-  </div>
+  <section class="section">
+    <div class="container">
+      <Article title="제목" preview="내용"/>
+    </div>
+  </section>
 </template>
 
 <script>

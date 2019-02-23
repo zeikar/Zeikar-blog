@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  name: "Articles",
+  name: "Article",
   props: ["title", "preview"]
 };
 </script>
