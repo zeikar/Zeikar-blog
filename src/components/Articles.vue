@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    <div class="notification">This container is
-      <strong>centered</strong> on desktop.
-    </div>
+    <Article title="제목" preview="내용"/>
   </div>
 </template>
 
 <script>
+import Article from "./Article.vue";
+
 export default {
   name: "Articles",
-  props: {
-    msg: String
+  components: {
+    Article
   }
 };
 </script>
