@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.4",
+    "firebase": "^5.8.4",
     "vue": "^2.6.6"
   },
   "devDependencies": {
@@ -29,7 +30,17 @@
       "plugin:vue/essential",
       "eslint:recommended"
     ],
-    "rules": {},
+    "rules": {
+      "no-console": "off",
+      "quotes": [
+        "error",
+        "double"
+      ],
+      "semi": [
+        "error",
+        "always"
+      ]
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     }
