@@ -1,18 +1,45 @@
 <template>
   <section class="section">
     <div class="container">
-      <Article title="제목" preview="내용"/>
+      <Article
+        v-for="(article, index) in articles"
+        :key="index"
+        :title="article.title"
+        :preview="article.contents"
+      />
     </div>
   </section>
 </template>
 
 <script>
+import { firestore } from "../firebase/firestore";
 import Article from "./Article.vue";
 
 export default {
   name: "Articles",
   components: {
     Article
+  },
+  data() {
+    return {
+      articles: null
+    };
+  },
+  created() {
+    this.fetchData();
+  },
+  methods: {
+    fetchData() {
+      firestore
+        .collection("posts")
+        .get()
+        .then(querySnapshot => {
+          this.articles = [];
+          querySnapshot.forEach(doc => {
+            this.articles.push(doc.data());
+          });
+        });
+    }
   }
 };
 </script>
