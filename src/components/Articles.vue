@@ -32,8 +32,7 @@ export default {
     fetchData() {
       firestore
         .collection("posts")
-        .get()
-        .then(querySnapshot => {
+        .onSnapshot(querySnapshot => {
           this.articles = [];
           querySnapshot.forEach(doc => {
             this.articles.push(doc.data());
