@@ -4,6 +4,7 @@ import Router from "vue-router";
 import Articles from "../components/Articles.vue";
 import Profile from "../components/Profile.vue";
 import Post from "../components/Post.vue";
+import Editor from "../components/Editor.vue";
 import PageNotFound from "../components/PageNotFound.vue";
 
 Vue.use(Router);
@@ -24,6 +25,17 @@ const router = new Router({
             path: "/post/:postTitle",
             name: "블로그 글 보기",
             component: Post,
+            props: true
+        },        
+        {
+            path: "/editor",
+            name: "블로그 글 쓰기",
+            component: Editor
+        },
+        {
+            path: "/editor/:postId",
+            name: "블로그 글 수정",
+            component: Editor,
             props: true
         },
         {
