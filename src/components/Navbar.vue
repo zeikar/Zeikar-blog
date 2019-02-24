@@ -28,13 +28,13 @@
           <a class="navbar-link is-tab">More</a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item">
+            <a class="navbar-item" href="https://www.facebook.com/lucizgames/" target="_blank">
               <span class="icon">
                 <i class="fab fa-facebook"></i>
               </span>
               Facebook
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="https://github.com/LuciZ" target="_blank">
               <span class="icon">
                 <i class="fab fa-github"></i>
               </span>

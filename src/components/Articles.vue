@@ -1,23 +1,24 @@
 <template>
-  <section class="section">
-    <div class="container">
-      <Article
-        v-for="(post, index) in posts"
-        :key="index"
-        :post="post"
-      />
-    </div>
-  </section>
+  <div>
+    <Hero/>
+    <section class="section">
+      <div class="container">
+        <Article v-for="(post, index) in posts" :key="index" :post="post"/>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
 import { getPosts } from "../services/posts";
 import Article from "./Article.vue";
+import Hero from "./Hero.vue";
 
 export default {
   name: "Articles",
   components: {
-    Article
+    Article,
+    Hero
   },
   data() {
     return {
@@ -30,11 +31,11 @@ export default {
   methods: {
     fetchData() {
       getPosts().then(querySnapshot => {
-          this.posts = [];
-          querySnapshot.forEach(doc => {
-            this.posts.push(doc.data());
-          });
+        this.posts = [];
+        querySnapshot.forEach(doc => {
+          this.posts.push(doc.data());
         });
+      });
     }
   }
 };
