@@ -2,6 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 
 import Articles from "../components/Articles.vue";
+import Profile from "../components/Profile.vue";
 import PageNotFound from "../components/PageNotFound.vue";
 
 Vue.use(Router);
@@ -12,6 +13,11 @@ const router = new Router({
             path: "/",
             name: "Zeikar's 기술 블로그",
             component: Articles
+        },
+        {
+            path: "/about",
+            name: "About me",
+            component: Profile
         },
         {
             path: "*",
