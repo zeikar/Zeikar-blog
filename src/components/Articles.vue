@@ -2,10 +2,9 @@
   <section class="section">
     <div class="container">
       <Article
-        v-for="(article, index) in articles"
+        v-for="(post, index) in posts"
         :key="index"
-        :title="article.title"
-        :preview="article.contents"
+        :post="post"
       />
     </div>
   </section>
@@ -22,7 +21,7 @@ export default {
   },
   data() {
     return {
-      articles: null
+      posts: null
     };
   },
   created() {
@@ -31,9 +30,9 @@ export default {
   methods: {
     fetchData() {
       getPosts().then(querySnapshot => {
-          this.articles = [];
+          this.posts = [];
           querySnapshot.forEach(doc => {
-            this.articles.push(doc.data());
+            this.posts.push(doc.data());
           });
         });
     }

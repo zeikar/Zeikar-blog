@@ -1,49 +1,44 @@
 <template>
   <article class="media">
-    <figure class="media-left">
-      <p class="image is-64x64">
+    <div class="media-content">
+      <div class="content">
+        <h2>{{post.title}}</h2>
+        {{post.contents}}
+      </div>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <p class="level-item">
+          <span class="icon is-small">
+            <i class="fas fa-clock"></i>
+          </span>
+          {{formatDate()}}
+        </p>
+        <p class="level-item">
+          <span class="icon is-small">
+            <i class="fas fa-eye"></i>
+          </span>
+          {{post.views}}
+        </p>
+      </div>
+    </nav>
+    <figure class="media-right">
+      <p class="image is-128x128">
         <img src="https://bulma.io/images/placeholders/128x128.png">
       </p>
     </figure>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong>{{title}}</strong>
-          <small>@johnsmith</small>
-          <small>31m</small>
-          <br>
-          {{preview}}
-        </p>
-      </div>
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <a class="level-item">
-            <span class="icon is-small">
-              <i class="fas fa-reply"></i>
-            </span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small">
-              <i class="fas fa-retweet"></i>
-            </span>
-          </a>
-          <a class="level-item">
-            <span class="icon is-small">
-              <i class="fas fa-heart"></i>
-            </span>
-          </a>
-        </div>
-      </nav>
-    </div>
-    <div class="media-right">
-      <button class="delete"></button>
-    </div>
   </article>
 </template>
 
 <script>
 export default {
   name: "Article",
-  props: ["title", "preview"]
+  props: ["post"],
+  methods: {
+    formatDate() {
+      const date = new Date(this.post.created_at.seconds * 1000);
+      return date.toLocaleDateString();
+    }
+  }
 };
 </script>
