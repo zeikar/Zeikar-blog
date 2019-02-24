@@ -3,6 +3,7 @@ import Router from "vue-router";
 
 import Articles from "../components/Articles.vue";
 import Profile from "../components/Profile.vue";
+import Post from "../components/Post.vue";
 import PageNotFound from "../components/PageNotFound.vue";
 
 Vue.use(Router);
@@ -18,6 +19,12 @@ const router = new Router({
             path: "/about",
             name: "About me",
             component: Profile
+        },
+        {
+            path: "/post/:postTitle",
+            name: "블로그 글 보기",
+            component: Post,
+            props: true
         },
         {
             path: "*",

@@ -2,11 +2,11 @@
   <article class="media">
     <div class="media-content">
       <nav class="level">
-        <div class="level-left">
-          <div class="content">
-            <h2>{{post.title}}</h2>
-            {{post.contents}}
-          </div>
+        <div class="content">
+          <h2>
+            <router-link class="has-text-dark" :to="'post/' + post.title">{{post.title}}</router-link>
+          </h2>
+          <p>{{post.contents.substring(0, 100)}}</p>
         </div>
         <div class="level-right">
           <p class="level-item">
