@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <router-link to="/" class="navbar-item is-tab">
+      <router-link to="/" class="navbar-item">
         <b>Zeikar</b>'s 기술 블로그
       </router-link>
 
@@ -28,9 +28,18 @@
           <a class="navbar-link is-tab">More</a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item">About</a>
-            <a class="navbar-item">Jobs</a>
-            <a class="navbar-item">Contact</a>
+            <a class="navbar-item">
+              <span class="icon">
+                <i class="fab fa-facebook"></i>
+              </span>
+              Facebook
+            </a>
+            <a class="navbar-item">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              Github
+            </a>
             <hr class="navbar-divider">
             <a class="navbar-item">Report an issue</a>
           </div>

@@ -9,13 +9,13 @@
     <nav class="level is-mobile">
       <div class="level-left">
         <p class="level-item">
-          <span class="icon is-small">
+          <span class="icon">
             <i class="fas fa-clock"></i>
           </span>
           {{formatDate()}}
         </p>
         <p class="level-item">
-          <span class="icon is-small">
+          <span class="icon">
             <i class="fas fa-eye"></i>
           </span>
           {{post.views}}
