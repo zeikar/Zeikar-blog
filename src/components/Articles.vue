@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { firestore } from "../firebase/firestore";
+import { getPosts } from "../services/posts";
 import Article from "./Article.vue";
 
 export default {
@@ -30,9 +30,7 @@ export default {
   },
   methods: {
     fetchData() {
-      firestore
-        .collection("posts")
-        .onSnapshot(querySnapshot => {
+      getPosts().then(querySnapshot => {
           this.articles = [];
           querySnapshot.forEach(doc => {
             this.articles.push(doc.data());
