@@ -3,7 +3,7 @@
     <div class="content has-text-centered">
       <p>
         <strong>Zeikar's 기술 블로그</strong> by
-        <a href="https://jgthms.com">Zeikar</a>
+        <a>Zeikar</a>
       </p>
     </div>
   </footer>
