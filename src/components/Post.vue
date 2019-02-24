@@ -1,12 +1,16 @@
 <template>
-  <div class="container">
-    <figure class="image is-3by1">
-      <img src="https://bulma.io/images/placeholders/128x128.png" :alt="postTitle">
-    </figure>
-    <div class="content">
-      <h1>{{postTitle}}</h1>
-      <div v-if="post" v-html="convertContents()"></div>
-    </div>
+  <div v-if="post" class="container">
+    <section class="hero is-medium has-text-centered has-background">
+      <div class="hero-body blur-background">
+        <div class="container">
+          <h1 class="is-size-1 has-text-white">{{post.title}}</h1>
+          <h2 class="subtitle has-text-white">{{formatDate()}}</h2>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="content" v-html="convertContents()"></div>
+    </section>
   </div>
 </template>
 
@@ -28,12 +32,36 @@ export default {
   methods: {
     fetchData() {
       getPost(this.postTitle).then(querySnapshot => {
-        this.post = querySnapshot.docs[0].data();        
+        this.post = querySnapshot.docs[0].data();
       });
     },
     convertContents() {
       return marked(this.post.contents);
+    },
+    formatDate() {
+      const date = new Date(this.post.created_at);
+      return date.toLocaleDateString();
     }
   }
 };
 </script>
+
+<style>
+.has-background {
+  background-image: url("https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.blur-background {
+  background: rgba(12, 12, 48, 0.3);
+}
+
+.content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+}
+</style>

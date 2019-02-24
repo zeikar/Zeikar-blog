@@ -38,7 +38,7 @@ export default {
   props: ["post"],
   methods: {
     formatDate() {
-      const date = new Date(this.post.created_at.seconds * 1000);
+      const date = new Date(this.post.created_at);
       return date.toLocaleDateString();
     }
   }
