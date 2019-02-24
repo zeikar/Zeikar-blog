@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
+      <router-link to="/" class="navbar-item is-tab">
         <b>Zeikar</b>'s 기술 블로그
-      </a>
-      
+      </router-link>
+
       <a
         role="button"
         class="navbar-burger burger"
@@ -21,9 +21,8 @@
 
     <div :class="{'is-active': isBurgerOpen}" class="navbar-menu">
       <div class="navbar-start navbar-center">
-        <a class="navbar-item is-tab">About</a>
-        
-        <a class="navbar-item is-tab is-active">Posts</a>
+        <router-link to="/about" class="navbar-item is-tab" active-class="is-active">About</router-link>
+        <router-link to="/" class="navbar-item is-tab" exact-active-class="is-active">Posts</router-link>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link is-tab">More</a>
