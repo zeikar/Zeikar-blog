@@ -1,8 +1,9 @@
 import Vue from "vue";
 import Router from "vue-router";
 
-import Articles from "../components/Articles.vue";
+import Home from "../components/Home.vue";
 import Profile from "../components/Profile.vue";
+import Articles from "../components/Articles.vue";
 import Post from "../components/Post.vue";
 import Editor from "../components/Editor.vue";
 import PageNotFound from "../components/PageNotFound.vue";
@@ -14,12 +15,17 @@ const router = new Router({
     routes: [{
             path: "/",
             name: "Zeikar's 기술 블로그",
-            component: Articles
+            component: Home
         },
         {
             path: "/about",
             name: "About me",
             component: Profile
+        },
+        {
+            path: "/post",
+            name: "블로그 글",
+            component: Articles
         },
         {
             path: "/post/:postTitle",
