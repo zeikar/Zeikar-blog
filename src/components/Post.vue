@@ -1,6 +1,6 @@
 <template>
   <div v-if="post" class="container">
-    <section class="hero is-medium has-text-centered has-background">
+    <section class="hero post-background is-medium has-text-centered has-background">
       <div class="hero-body blur-background">
         <div class="container">
           <h1 class="is-size-1 has-text-white">{{post.title}}</h1>
@@ -47,8 +47,7 @@ export default {
 </script>
 
 <style>
-.has-background {
-  background-image: url("https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
+.has-background {  
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */

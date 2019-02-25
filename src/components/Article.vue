@@ -7,19 +7,11 @@
             <router-link class="has-text-dark" :to="'post/' + post.title">{{post.title}}</router-link>
           </h2>
           <p>{{post.contents.substring(0, 100)}}</p>
-        </div>
-        <div class="level-right">
-          <p class="level-item">
+          <p>
             <span class="icon">
               <i class="fas fa-clock"></i>
             </span>
             {{formatDate()}}
-          </p>
-          <p class="level-item">
-            <span class="icon">
-              <i class="fas fa-eye"></i>
-            </span>
-            {{post.views}}
           </p>
         </div>
       </nav>
