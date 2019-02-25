@@ -47,11 +47,8 @@ export default {
 </script>
 
 <style>
-.has-background {  
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-}
+.post-background {  
+   background-image: url("https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");}
 
 .blur-background {
   background: rgba(12, 12, 48, 0.3);
