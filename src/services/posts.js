@@ -43,6 +43,8 @@ export const editPost = (postId, title, contents) => {
       title: title,
       contents: contents,
       modified_at: Date.now()
+    }, {
+      merge: true
     })
     .then(docRef => {
       console.log("Document written with ID: ", docRef.id);
