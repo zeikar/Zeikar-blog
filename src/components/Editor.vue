@@ -14,6 +14,7 @@
 
 <script>
 import { addPost, editPost } from "../services/posts";
+import { anonymouslyLogin } from "../services/auth";
 
 export default {
   name: "Editor",
@@ -23,6 +24,9 @@ export default {
       title: "",
       contents: ""
     };
+  },
+  beforeCreate() {
+    anonymouslyLogin();
   },
   methods: {
     onSubmit() {
