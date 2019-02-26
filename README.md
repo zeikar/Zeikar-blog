@@ -1,4 +1,4 @@
-# Zeikar-blog
+# Zeikar's 기술 블로그
 
 ## Project setup
 ```
