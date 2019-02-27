@@ -11,6 +11,9 @@
     <section class="section">
       <div class="content post" v-html="convertContents()"></div>
     </section>
+    <section class="section">
+      <vue-disqus shortname="zeikar-blog" :identifier="post.title" :url="getCurrentURL()"></vue-disqus>
+    </section>
   </div>
 </template>
 
@@ -41,6 +44,9 @@ export default {
     formatDate() {
       const date = new Date(this.post.created_at);
       return date.toLocaleDateString();
+    },
+    getCurrentURL() {
+      return "https://zeikar-blog.firebaseapp.com" + this.$route.path;
     }
   }
 };

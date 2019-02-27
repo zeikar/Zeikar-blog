@@ -12,6 +12,7 @@
     "firebase": "^5.8.4",
     "marked": "^0.6.1",
     "vue": "^2.6.6",
+    "vue-disqus": "^3.0.5",
     "vue-router": "^3.0.2",
     "vue-typer": "^1.2.0"
   },

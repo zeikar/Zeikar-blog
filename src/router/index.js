@@ -32,7 +32,7 @@ const router = new Router({
             name: "블로그 글 보기",
             component: Post,
             props: true
-        },        
+        },
         {
             path: "/editor",
             name: "블로그 글 쓰기",
@@ -51,9 +51,14 @@ const router = new Router({
         }
     ]
 });
-        
+
 router.beforeEach((to, from, next) => {
-    document.title = to.name;
+    // 블로그 글로 타이틀 설정
+    if (to.params.postTitle !== undefined) {
+        document.title = to.params.postTitle;
+    } else {
+        document.title = to.name;
+    }
     next();
 });
 
