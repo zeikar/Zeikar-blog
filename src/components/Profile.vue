@@ -5,7 +5,7 @@
       <div class="container">
         <div class="card">
           <header class="card-header">
-            <p class="card-header-title  has-text-centered">About ME</p>            
+            <p class="card-header-title has-text-centered">About ME</p>
           </header>
           <div class="card-content">
             <div class="media">
@@ -20,11 +20,34 @@
               </div>
             </div>
 
+            <div class="content">개발을 좋아하는 개발자. Zeikar 입니다.</div>
+            <div class="tags">
+              <span class="tag">Devops</span>
+              <span class="tag">Web</span>
+              <span class="tag">Android</span>
+            </div>
+          </div>
+          <div class="card-content">
             <div class="content">
-              개발을 좋아하는 개발자. Zeikar 입니다.
-              <a>@Kakao corp.</a>
-              <a>#Devops</a>
-              <a>#Web</a>
+              <article class="message">
+                <div class="message-body">
+                  <h3>Apps (Games)</h3>
+                  <ul>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.luciz.airpangpang2" target="_blank">Air PANG PANG</a></li>
+                    <li><a href="https://play.google.com/store/apps/details?id=com.LuciZ.TetriCube" target="_blank">Tetricube</a></li>
+                  </ul>
+                  <h3>Works</h3>
+                  <ul>
+                    <li>2019.01- Kakao corp.</li>
+                    <li>2018.07-08 Samsung SDS 인턴</li>
+                    <li>2014.10-12 NexText 인턴</li>
+                  </ul>
+                  <h3>Education</h3>
+                  <ul>
+                    <li>2013.03-2019.02 Dongguk Univ.</li>
+                  </ul>
+                </div>
+              </article>
             </div>
           </div>
 
