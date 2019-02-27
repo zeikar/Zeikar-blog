@@ -25,7 +25,7 @@ export default {
       contents: ""
     };
   },
-  beforeCreate() {
+  created() {
     anonymouslyLogin();
   },
   methods: {
