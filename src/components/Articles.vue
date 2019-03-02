@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { getPosts } from "../services/posts";
+import { postStore } from "../store/posts";
 import Article from "./Article.vue";
 import Hero from "./Hero.vue";
 
@@ -20,22 +20,17 @@ export default {
     Article,
     Hero
   },
-  data() {
-    return {
-      posts: null
-    };
+  computed: {
+    posts () {
+      return postStore.state.posts;
+    }
   },
   created() {
     this.fetchData();
   },
   methods: {
     fetchData() {
-      getPosts().then(querySnapshot => {
-        this.posts = [];
-        querySnapshot.forEach(doc => {
-          this.posts.push(doc.data());
-        });
-      });
+      postStore.commit("fetchPosts");
     }
   }
 };
