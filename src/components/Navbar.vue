@@ -51,10 +51,17 @@
         <div class="navbar-item">
           <div class="field has-addons">
             <div class="control">
-              <input class="input is-rounded" type="search" placeholder="블로그 내 검색">
+              <input
+                class="input is-rounded"
+                type="search"
+                placeholder="블로그 내 검색"
+                v-on:input="searchInput"
+                v-bind:value="searchKeyword"
+                @keyup.enter="searchSubmit"
+              >
             </div>
             <div class="control">
-              <button class="button is-rounded">
+              <button class="button is-rounded" @click="searchSubmit">
                 <span class="icon is-small">
                   <i class="fas fa-search"></i>
                 </span>
@@ -68,12 +75,23 @@
 </template>
 
 <script>
+import { postStore } from "../store/posts";
+
 export default {
   name: "Navbar",
-  data: function() {
+  data() {
     return {
-      isBurgerOpen: false
+      isBurgerOpen: false,
+      searchKeyword: ""
     };
+  },
+  methods: {
+    searchInput(e) {
+      this.searchKeyword = e.target.value;
+    },
+    searchSubmit() {
+      postStore.dispatch("searchPosts", this.searchKeyword);
+    }
   }
 };
 </script>

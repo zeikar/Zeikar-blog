@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     posts () {
-      return postStore.state.posts;
+      return postStore.getters.getCurrentPosts;
     }
   },
   created() {
