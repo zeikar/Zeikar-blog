@@ -23,12 +23,12 @@ const router = new Router({
             component: Profile
         },
         {
-            path: "/post",
+            path: "/posts",
             name: "블로그 글",
             component: Articles
         },
         {
-            path: "/post/:postTitle",
+            path: "/posts/:postTitle",
             name: "블로그 글 보기",
             component: Post,
             props: true
