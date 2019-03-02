@@ -9,12 +9,18 @@ export const postStore = new Vuex.Store({
     posts: null
   },
   mutations: {
-    fetchPosts(state) {
+    fetchPosts(state, data) {
+      state.posts = data;
+    }
+  },
+  actions: {
+    fetchPosts(context) {
       getPosts().then(querySnapshot => {
-        state.posts = [];
+        let posts = [];
         querySnapshot.forEach(doc => {
-          state.posts.push(doc.data());
+          posts.push(doc.data());
         });
+        context.commit("fetchPosts", posts);
       });
     }
   }
