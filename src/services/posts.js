@@ -21,10 +21,11 @@ export const getPost = (title) => {
     });
 };
 
-export const addPost = (title, contents) => {
+export const addPost = (title, thumbnail, contents) => {
   return firestore
     .collection("posts").add({
       title: title,
+      thumbnail: thumbnail,
       contents: contents,
       created_at: Date.now(),
       views: 0
@@ -37,10 +38,11 @@ export const addPost = (title, contents) => {
     });
 };
 
-export const editPost = (postId, title, contents) => {
+export const editPost = (postId, title, thumbnail, contents) => {
   return firestore
     .collection("posts").doc(postId).set({
       title: title,
+      thumbnail: thumbnail,
       contents: contents,
       modified_at: Date.now()
     }, {

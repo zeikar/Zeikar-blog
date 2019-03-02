@@ -18,7 +18,7 @@
     </div>
     <figure class="media-right">
       <p class="image is-128x128">
-        <img src="https://bulma.io/images/placeholders/128x128.png">
+        <img style="object-fit: cover;" :src="post.thumbnail">
       </p>
     </figure>
   </article>

@@ -1,11 +1,12 @@
 <template>
   <div class="container">
     <div class="control">
-      <input v-model="title" class="input" type="text" placeholder="Text input">
+      <input v-model="title" class="input" type="text" placeholder="title input">
+      <input v-model="thumbnail" class="input" type="text" placeholder="thumbnail input">
       <textarea
         v-model="contents"
         class="textarea has-fixed-size"
-        placeholder="Fixed size textarea"
+        placeholder="content textarea"
       ></textarea>
     </div>
     <button class="button" @click="onSubmit()">Button</button>
@@ -22,6 +23,7 @@ export default {
   data() {
     return {
       title: "",
+      thumbnail: "",
       contents: ""
     };
   },
@@ -31,11 +33,11 @@ export default {
   methods: {
     onSubmit() {
       if (this.postId != undefined) {
-        editPost(this.postId, this.title, this.contents).then(() => {
+        editPost(this.postId, this.title, this.thumbnail, this.contents).then(() => {
           alert("수정 완료");
         });
       } else {
-        addPost(this.title, this.contents).then(() => {
+        addPost(this.title, this.thumbnail, this.contents).then(() => {
           alert("작성 완료");
         });
       }
