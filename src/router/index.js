@@ -5,6 +5,7 @@ import Home from "../components/Home.vue";
 import Profile from "../components/Profile.vue";
 import Articles from "../components/Articles.vue";
 import Post from "../components/Post.vue";
+import Search from "../components/Search.vue";
 import Editor from "../components/Editor.vue";
 import PageNotFound from "../components/PageNotFound.vue";
 
@@ -34,6 +35,12 @@ const router = new Router({
             props: true
         },
         {
+            path: "/posts/search/:searchQuery",
+            name: "블로그 글 검색",
+            component: Search,
+            props: true
+        },
+        {
             path: "/editor",
             name: "블로그 글 쓰기",
             component: Editor
@@ -56,6 +63,10 @@ router.beforeEach((to, from, next) => {
     // 블로그 글로 타이틀 설정
     if (to.params.postTitle !== undefined) {
         document.title = to.params.postTitle;
+    }
+    // 검색 결과
+    else if (to.params.searchQuery !== undefined) {
+        document.title = to.params.searchQuery + " 검색 결과";
     } else {
         document.title = to.name;
     }

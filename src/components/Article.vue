@@ -4,7 +4,7 @@
       <nav class="level">
         <div class="content">
           <h2>
-            <router-link class="has-text-dark" :to="'posts/' + post.title">{{post.title}}</router-link>
+            <router-link class="has-text-dark" :to="'/posts/' + post.title">{{post.title}}</router-link>
           </h2>
           <p>{{post.contents.substring(0, 100)}}</p>
           <p>

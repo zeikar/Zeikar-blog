@@ -75,8 +75,6 @@
 </template>
 
 <script>
-import { postStore } from "../store/posts";
-
 export default {
   name: "Navbar",
   data() {
@@ -90,7 +88,14 @@ export default {
       this.searchKeyword = e.target.value;
     },
     searchSubmit() {
-      postStore.dispatch("searchPosts", this.searchKeyword);
+      this.searchKeyword = this.searchKeyword.trim();
+      // 검색 문자열 있는지 확인
+      if (this.searchKeyword == "") {
+        return;
+      }
+      this.$router.push({
+        path: "/posts/search/" + this.searchKeyword
+      });
     }
   }
 };
