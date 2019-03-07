@@ -42,7 +42,7 @@
               Github
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item">Report an issue</a>
+            <a class="navbar-item" href="mailto:zeikar.luciz@gmail.com" target="_top">Report an issue</a>
           </div>
         </div>
       </div>
