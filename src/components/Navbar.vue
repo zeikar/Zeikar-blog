@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <router-link to="/" class="navbar-item">
+      <router-link to="/" class="navbar-item" @click.native="closeBurger()">
         <b>Zeikar</b>'s 기술 블로그
       </router-link>
 
@@ -21,14 +21,14 @@
 
     <div :class="{'is-active': isBurgerOpen}" class="navbar-menu">
       <div class="navbar-start navbar-center">
-        <router-link to="/" class="navbar-item is-tab" exact-active-class="is-active">Home</router-link>
-        <router-link to="/about" class="navbar-item is-tab" active-class="is-active">About</router-link>
-        <router-link to="/posts" class="navbar-item is-tab" active-class="is-active">Posts</router-link>
+        <router-link to="/" class="navbar-item is-tab" exact-active-class="is-active" @click.native="closeBurger()">Home</router-link>
+        <router-link to="/about" class="navbar-item is-tab" active-class="is-active" @click.native="closeBurger()">About</router-link>
+        <router-link to="/posts" class="navbar-item is-tab" active-class="is-active" @click.native="closeBurger()">Posts</router-link>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link is-tab">More</a>
 
-          <div class="navbar-dropdown">
+          <div class="navbar-dropdown is-active">
             <a class="navbar-item" href="https://www.facebook.com/lucizgames/" target="_blank">
               <span class="icon">
                 <i class="fab fa-facebook"></i>
@@ -61,7 +61,7 @@
               >
             </div>
             <div class="control">
-              <button class="button is-rounded" @click="searchSubmit">
+              <button class="button is-rounded" @click="searchSubmit()">
                 <span class="icon is-small">
                   <i class="fas fa-search"></i>
                 </span>
@@ -96,6 +96,11 @@ export default {
       this.$router.push({
         path: "/posts/search/" + this.searchKeyword
       });
+
+      this.closeBurger();
+    },
+    closeBurger() {
+      this.isBurgerOpen = false;
     }
   }
 };
