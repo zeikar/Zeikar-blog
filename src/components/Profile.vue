@@ -39,8 +39,8 @@
                   <h3>Works</h3>
                   <ul>
                     <li>2019.01- Kakao corp.</li>
-                    <li>2018.07-08 Samsung SDS 인턴</li>
-                    <li>2014.10-12 NexText 인턴</li>
+                    <li>2018.07-08 Samsung SDS</li>
+                    <li>2014.10-12 NexText</li>
                   </ul>
                   <h3>Education</h3>
                   <ul>
