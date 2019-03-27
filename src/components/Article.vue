@@ -6,7 +6,9 @@
           <h2>
             <router-link class="has-text-dark" :to="'/posts/' + post.title">{{post.title}}</router-link>
           </h2>
-          <p>{{post.contents.substring(0, 100)}}</p>
+          <p>
+            {{contentSubstring()}}
+          </p>
           <p>
             <span class="icon">
               <i class="fas fa-clock"></i>
@@ -32,6 +34,9 @@ export default {
     formatDate() {
       const date = new Date(this.post.created_at);
       return date.toLocaleDateString();
+    },
+    contentSubstring() {
+      return this.post.contents.substring(1, 150) + "...";
     }
   }
 };
