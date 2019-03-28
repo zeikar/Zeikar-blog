@@ -1,7 +1,9 @@
 <template>
   <div class="columns is-desktop">
     <div class="column has-text-centered">
-      <img class="article-image" :src="post.thumbnail">
+      <router-link class="has-text-dark" :to="'/posts/' + post.title">
+        <img class="article-image" :src="post.thumbnail">
+      </router-link>
     </div>
     <div class="column is-four-fifths">
       <nav class="level">
