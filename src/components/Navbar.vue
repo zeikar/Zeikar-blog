@@ -35,7 +35,7 @@
               </span>
               Facebook
             </a>
-            <a class="navbar-item" href="https://github.com/LuciZ" target="_blank">
+            <a class="navbar-item" href="https://github.com/zeikar/zeikar-blog" target="_blank">
               <span class="icon">
                 <i class="fab fa-github"></i>
               </span>
