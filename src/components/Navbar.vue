@@ -35,14 +35,20 @@
               </span>
               Facebook
             </a>
-            <a class="navbar-item" href="https://github.com/zeikar/zeikar-blog" target="_blank">
+            <a class="navbar-item" href="https://www.linkedin.com/in/zeikar/" target="_blank">
+              <span class="icon">
+                <i class="fab fa-linkedin"></i>
+              </span>
+              LinkedIn
+            </a>            
+            <a class="navbar-item" href="https://github.com/zeikar" target="_blank">
               <span class="icon">
                 <i class="fab fa-github"></i>
               </span>
               Github
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item" href="mailto:zeikar.luciz@gmail.com" target="_top">Report an issue</a>
+            <a class="navbar-item" href="https://github.com/zeikar/Zeikar-blog/issues" target="_blank">Report an issue</a>
           </div>
         </div>
       </div>
